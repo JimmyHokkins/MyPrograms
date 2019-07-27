@@ -16,10 +16,10 @@ public class Task9 {
         }
         int sum = 0, sum_max = 0, index = 0;
         for(int j = 0; j < S2; j++) {
-            for(int i = 0; i < S1; i++) {
+            for(int i = 0; i < S1; i++) {  // находим сумму элементов очередного столбца
                 sum += array[i][j];
             }
-            if(sum > sum_max) {
+            if(sum > sum_max) {  
                 sum_max = sum;
                 index = j + 1;
             }
