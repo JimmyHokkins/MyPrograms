@@ -62,11 +62,11 @@ public class Task16 {
     static void show(int a[][]){        
         for(int x[] : a){
             for(int y : x) {
-                System.out.print(y + " ");
+                System.out.print(y + "\t");
             }
             System.out.println();
         } 
-        System.out.println();
+        System.out.println("\n");
     }
     static void copyArray(int a1[], int a2[]){
         for(int i = 0; i < a1.length; i++) 
