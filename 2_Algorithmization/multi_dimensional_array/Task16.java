@@ -16,7 +16,7 @@ public class Task16 {
         else System.out.println("Неподходящий порядок.");
     }
     static int count1 = 0;
-    static int[][] genMagicSum(int N, int MagicSum, int m) {        
+    static int[][] genMagicSum(int N, int MagicSum, int m) {        // метод генерации комбинаций чисел
         int count = 0;
         int count2 = 0;
         int combs[][] = new int[count][m];  
@@ -59,7 +59,7 @@ public class Task16 {
         }        
         return combs;
     }
-    static void show(int a[][]){        
+    static void show(int a[][]){        // метод для отображения квадратов
         for(int x[] : a){
             for(int y : x) {
                 System.out.print(y + "\t");
@@ -68,18 +68,18 @@ public class Task16 {
         } 
         System.out.println("\n");
     }
-    static void copyArray(int a1[], int a2[]){
+    static void copyArray(int a1[], int a2[]){     // метод для копирования одномерных массивов
         for(int i = 0; i < a1.length; i++) 
             a1[i] = a2[i];       
     }    
-    static void copyArray2(int a1[][], int a2[][]) {        
+    static void copyArray2(int a1[][], int a2[][]) {        // метод для копирования двумерных массивов
         for(int i = 0; i < a2.length; i++){
             for(int j = 0; j < a2[0].length; j++){
                 a1[i][j] = a2[i][j];
             }
         }
     }
-    static void copyArray3(int a1[][][], int a2[][][]) {
+    static void copyArray3(int a1[][][], int a2[][][]) {    // метод для копирования трехмерных массивов
         for(int k = 0; k < a2.length; k++)
             for(int i = 0; i < a2[0].length; i++){
                 for(int j = 0; j < a2[0][0].length; j++){
@@ -87,7 +87,7 @@ public class Task16 {
                 }
             }
     }
-    static void copyArray4(int a1[], int a2[], int n) {        
+    static void copyArray4(int a1[], int a2[], int n) {     // метод для частичного копирования одномерных массивов  
         for(int i = 0, j = 0; j < a2.length; j++){
             if(j != n) {
                 a1[i] = a2[j];
@@ -95,7 +95,7 @@ public class Task16 {
             }
         }        
     }
-    static void copyArray5(int a1[][], int a2[][], int n) {        
+    static void copyArray5(int a1[][], int a2[][], int n) {     // метод для частичного копирования двумерных массивов   
         for(int i = 0, t = 0; i < a2.length; i++){
             if(i == n) continue;
             for(int j = 0; j < a1[0].length; j++){
@@ -104,7 +104,7 @@ public class Task16 {
             t++;
         }     
     }
-    static boolean checkEntry(int a1[], int a2[][]) {
+    static boolean checkEntry(int a1[], int a2[][]) {   // метод для проверки вхождения одномерного массива в двумерный
         int f = 0;                
         for(int i = 0; i < a2.length; i++){
             for(int k = 0; k < a1.length; k++) {
@@ -120,7 +120,7 @@ public class Task16 {
         }
         return false;
     }
-    static boolean checkEntry2(int a1[], int a2[]){
+    static boolean checkEntry2(int a1[], int a2[]){  // метод для проверки двух одномерных массивов на пересечение
         for(int i = 0; i < a1.length; i++){
             for(int j = 0; j < a1.length; j++) {
                 if(a1[i] == a2[j]) return true;
@@ -128,23 +128,19 @@ public class Task16 {
         }
         return false;
     }
-    static boolean checkEntry3(int a1[], int a2[][]) {
-        for(int k = 0; k < a1.length; k++) {
-            for(int i = 0; i < a2.length; i++){
-                for(int j = 0; j < a2[0].length; j++){
-                    if(a1[k] == a2[i][j]) return true;
-                }
-            }
-        }
+    static boolean checkEntry3(int a1[], int a2[][]) {  // метод для проверки на пересечение одномерного массива с двумерным 
+        for(int i = 0; i < a2.length; i++){
+            if(checkEntry2(a1, a2[i])) return true;
+        }        
         return false;
     }
-    static boolean checkEntry4(int n, int a[]) {
+    static boolean checkEntry4(int n, int a[]) {  // метод для провеки вхождения числа в массив
         for(int i = 0; i < a.length; i++){
             if(n == a[i]) return true;
         }
         return false;
     }
-    static boolean checkEntry5(int[] a1, int[] a2) {
+    static boolean checkEntry5(int[] a1, int[] a2) {  // метод для проверки равенства двух одномерных массивов
         int f = 0;
         for(int i = 0; i < a1.length; i++) {
             if(a1[i] == a2[i]) f++;
@@ -152,7 +148,7 @@ public class Task16 {
         if(f == a1.length) return true;
         return false;
     }
-    static boolean checkEntry6(int[][] m, int[][][] ms){
+    static boolean checkEntry6(int[][] m, int[][][] ms){  // метод для проверки вхождения матрицы в набор матриц
         for(int i = 0; i < ms.length; i++) {
             int f = 0;
             for(int j = 0; j < m.length; j++) {
@@ -162,14 +158,14 @@ public class Task16 {
         }
         return false;
     }
-    static void matrixReset(int a[][]){
+    static void matrixReset(int a[][]){  // сборос значений матрицы в ноль
         for(int i = 0; i < a.length; i++){
             for(int j = 0; j < a[0].length; j++) {
                 a[i][j]=0;
             }
         }
     }
-    static int[][][] matrixGen(int array[][]){
+    static int[][][] matrixGen(int array[][]){    //  метод для генерации массива матриц
         int N = array.length, M = array[0].length;
         int count = 0;
         int[][][] matrixes = new int[count][M][M];
@@ -202,8 +198,8 @@ public class Task16 {
         }
         return matrixes;
     }
-    static int[][][] addMatrix(int[][] matrix, int[][][] matrixes, int count, int M) {
-        int[][] temp1 = new int[matrix.length][matrix[0].length];
+    static int[][][] addMatrix(int[][] matrix, int[][][] matrixes, int count, int M) {  // метод для генерирования матриц путем 
+        int[][] temp1 = new int[matrix.length][matrix[0].length];                       // перестановки строк
         int[][][] temp2;
         if(M == 3) {            
             for(int i = 0; i < matrix.length; i++) {
@@ -247,14 +243,13 @@ public class Task16 {
                         matrixes = new int[count][M][matrix[0].length];
                         copyArray3(matrixes, temp4);
                         copyArray2(matrixes[count - 1], temp1);
-                    }
-                    
+                    }                    
                 }                
             }
         }
         return matrixes;
     }
-    static int[][] swapString(int[][] matrix, int n, int m){
+    static int[][] swapString(int[][] matrix, int n, int m){   //  метод для перестановки строк в матрице
         int[][] temp = new int[matrix.length][matrix[0].length]; 
         int[] t;
         copyArray2(temp, matrix);
@@ -263,12 +258,12 @@ public class Task16 {
         temp[m] = t;
         return temp;
     }
-    static void findMagicSquares(int matrixes[][][], int M){
+    static void findMagicSquares(int matrixes[][][], int M){   // метод для запуска поиска магических квадратов
         for(int i = 0; i < matrixes.length; i++){
             findMSWorker(matrixes[0].length - 1, matrixes[i], matrixes[0].length, M);
         }        
     }
-    static void findMSWorker(int n, int array[][], int size, int M) {       
+    static void findMSWorker(int n, int array[][], int size, int M) {  // метод, ищущий маг. квадраты путем перестановки чисел в строках   
         if(n == 0) {            
             int matrix[][] = genCombs(array[0].length, array[n]);            
             int candidate[][] = new int[size][size];
@@ -295,12 +290,12 @@ public class Task16 {
             }
         }
     }
-    static int fact(int n) {
+    static int fact(int n) {   //  метод для расчета факториала
         int f = 1;
         for(int i = 1; i <= n; i++) f *= i;
         return f;
     }
-    static int[][] genCombs(int n, int a[]){
+    static int[][] genCombs(int n, int a[]){  // метод, генерирующий комбинации чисел
         if(n == 3){
             int combs[][] = new int[6][n];
             int temp;
@@ -335,7 +330,7 @@ public class Task16 {
         }
         return new int[0][0];
     }    
-    static boolean checkMagicSquare(int matrix[][], int M){        
+    static boolean checkMagicSquare(int matrix[][], int M){   // метод для проверки квадрата на магию     
         int sum1 = 0, sum2 = 0;
         int n = matrix.length;
         for(int i = 0; i < n; i++){
