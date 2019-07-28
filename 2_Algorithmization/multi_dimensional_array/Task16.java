@@ -69,23 +69,13 @@ public class Task16 {
         System.out.println("\n");
     }
     static void copyArray(int a1[], int a2[]){     // метод для копирования одномерных массивов
-        for(int i = 0; i < a1.length; i++) 
-            a1[i] = a2[i];       
+        for(int i = 0; i < a1.length; i++) a1[i] = a2[i];                   
     }    
     static void copyArray2(int a1[][], int a2[][]) {        // метод для копирования двумерных массивов
-        for(int i = 0; i < a2.length; i++){
-            for(int j = 0; j < a2[0].length; j++){
-                a1[i][j] = a2[i][j];
-            }
-        }
+        for(int i = 0; i < a2.length; i++) copyArray(a1[i], a2[i]);
     }
     static void copyArray3(int a1[][][], int a2[][][]) {    // метод для копирования трехмерных массивов
-        for(int k = 0; k < a2.length; k++)
-            for(int i = 0; i < a2[0].length; i++){
-                for(int j = 0; j < a2[0][0].length; j++){
-                    a1[k][i][j] = a2[k][i][j];
-                }
-            }
+        for(int k = 0; k < a2.length; k++) copyArray2(a1[k], a2[k]);
     }
     static void copyArray4(int a1[], int a2[], int n) {     // метод для частичного копирования одномерных массивов  
         for(int i = 0, j = 0; j < a2.length; j++){
