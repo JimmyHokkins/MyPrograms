@@ -95,6 +95,15 @@ public class Task16 {
             }
         }        
     }
+    static void copyArray5(int a1[][], int a2[][], int n) {        
+        for(int i = 0, t = 0; i < a2.length; i++){
+            if(i == n) continue;
+            for(int j = 0; j < a1[0].length; j++){
+                a1[t][j] = a2[i][j];                
+            }
+            t++;
+        }     
+    }
     static boolean checkEntry(int a1[], int a2[][]) {
         int f = 0;                
         for(int i = 0; i < a2.length; i++){
@@ -135,6 +144,24 @@ public class Task16 {
         }
         return false;
     }
+    static boolean checkEntry5(int[] a1, int[] a2) {
+        int f = 0;
+        for(int i = 0; i < a1.length; i++) {
+            if(a1[i] == a2[i]) f++;
+        }
+        if(f == a1.length) return true;
+        return false;
+    }
+    static boolean checkEntry6(int[][] m, int[][][] ms){
+        for(int i = 0; i < ms.length; i++) {
+            int f = 0;
+            for(int j = 0; j < m.length; j++) {
+                if(checkEntry5(m[j], ms[i][j])) f++;
+            }
+            if(f == m.length) return true; 
+        }
+        return false;
+    }
     static void matrixReset(int a[][]){
         for(int i = 0; i < a.length; i++){
             for(int j = 0; j < a[0].length; j++) {
@@ -156,12 +183,16 @@ public class Task16 {
                     copyArray(matrix[f], array[t]);
                     f++;
                     if(f == M) {
-                        temp = new int[count][M][M];
-                        copyArray3(temp, matrixes);                        
-                        count++;
-                        matrixes = new int[count][M][M];
-                        copyArray3(matrixes, temp);
-                        copyArray2(matrixes[count - 1], matrix);                        
+                        if(!checkEntry6(matrix, matrixes)){
+                            count = matrixes.length;
+                            temp = new int[count][M][M];
+                            copyArray3(temp, matrixes);                        
+                            count++;
+                            matrixes = new int[count][M][M];
+                            copyArray3(matrixes, temp);
+                            copyArray2(matrixes[count - 1], matrix);
+                            matrixes = addMatrix(matrix, matrixes, count, M);
+                        }
                         f = 1;
                         matrixReset(matrix);
                         copyArray(matrix[0], array[i]);
@@ -170,6 +201,67 @@ public class Task16 {
             }           
         }
         return matrixes;
+    }
+    static int[][][] addMatrix(int[][] matrix, int[][][] matrixes, int count, int M) {
+        int[][] temp1 = new int[matrix.length][matrix[0].length];
+        int[][][] temp2;
+        if(M == 3) {            
+            for(int i = 0; i < matrix.length; i++) {
+                copyArray(temp1[0], matrix[i]);            
+                for(int j = 0, t = 1; j < matrix.length; j++) {
+                    if(j != i) copyArray(temp1[t++], matrix[j]);                         
+                }
+                for(int k = 0; k < 2; k++) {
+                    if(!checkEntry6(temp1, matrixes)) {
+                        temp2 = new int[count][M][matrix[0].length];
+                        copyArray3(temp2, matrixes);
+                        count++;
+                        matrixes = new int[count][M][matrix[0].length];
+                        copyArray3(matrixes, temp2);
+                        copyArray2(matrixes[count - 1], temp1);
+                    }
+                    temp1 = swapString(temp1, 1, 2);
+                }
+            }
+            return matrixes;
+        }
+        else {            
+            for(int i = 0; i < matrix.length; i++){
+                copyArray(temp1[0], matrix[i]);
+                for(int j = 0, t = 1; j < matrix.length; j++) {
+                    if(j != i) copyArray(temp1[t++], matrix[j]);                         
+                }
+                int[][] temp3 = new int[M - 1][matrix[0].length];
+                copyArray5(temp3, temp1, 0);
+                temp2 = new int[0][M - 1][M];
+                temp2 = addMatrix(temp3, temp2, 0, M - 1);
+                int[][][] temp4;
+                for(int q = 0; q < temp2.length; q++) {                    
+                    for(int v = 1, s = 0; v < temp1.length; v++, s++) {
+                        copyArray(temp1[v], temp2[q][s]);
+                    }
+                    if(!checkEntry6(temp1, matrixes)) {
+                        temp4 = new int[count][M][matrix[0].length];
+                        copyArray3(temp4, matrixes);
+                        count++;
+                        matrixes = new int[count][M][matrix[0].length];
+                        copyArray3(matrixes, temp4);
+                        copyArray2(matrixes[count - 1], temp1);
+                    }
+                    
+                }                
+            }
+        }
+        return matrixes;
+    }
+    static int[][] swapString(int[][] matrix, int n, int m){
+        int[][] temp = new int[matrix.length][matrix[0].length]; 
+        int[] t;
+        copyArray2(temp, matrix);
+        t = temp[n];
+        temp[n] = temp[m];
+        temp[m] = t;
+        return temp;
     }
     static void findMagicSquares(int matrixes[][][], int M){
         for(int i = 0; i < matrixes.length; i++){
