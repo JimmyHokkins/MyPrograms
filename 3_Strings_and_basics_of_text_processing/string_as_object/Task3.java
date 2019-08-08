@@ -7,11 +7,10 @@ public class Task3 {
         System.out.print("Введите строку для проверки на палиндром: ");
         Scanner sc = new Scanner(System.in, "cp1251");
         String s = sc.nextLine();
-        s = s.toLowerCase();  // приводим строку к нижнему регистру 
         StringBuilder s2 = new StringBuilder(s);  // создаем временный объект StringBuilder для использования его метода реверсирования строки
         String s3 = new String(s2.reverse());  // создаем реверсированную строку, используя метод reverse() объекта StringBuilder
         boolean check = false;
-        if(s.equals(s3)) check = true;  // если обычная и реверсированная строки равны, значит слово палиндром
+        if(s.compareToIgnoreCase(s3) == 0) check = true;  // если обычная и реверсированная строки равны, значит слово палиндром
         String answer = check ? "слово является палиндромом" : "слово не является палиндромом";
         System.out.println("Результат проверки: " + answer);
     }    
