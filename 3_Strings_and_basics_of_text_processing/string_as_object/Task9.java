@@ -4,7 +4,7 @@
 
 import java.util.Scanner;
 
-public class Task1 {
+public class Task9 {
     public static void main(String[] args) {
         System.out.println("Введите строку с буквами в разном регистре: ");
         Scanner sc = new Scanner(System.in);
