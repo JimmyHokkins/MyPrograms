@@ -12,15 +12,13 @@ public class Task9 {
         int countLowerCase = 0;  // маленькие буквы
         int countUpperCase = 0;  // большие буквы
         int countOther = 0;  // другие символы
-        char[] letters = sourceString.toCharArray();
-        for(int i = 0; i < letters.length; i++) {
-            if((letters[i] >= 65 && letters[i] <= 90) || (letters[i] >= 97 && letters[i] <= 122)) {
-                if(Character.isUpperCase(letters[i])) {
-                    countUpperCase++;
-                }
-                else if(Character.isLowerCase(letters[i])){
-                    countLowerCase++;
-                }
+        String[] letters = sourceString.split("");
+        for(String letter : letters) {
+            if(letter.matches("[a-z]")) {
+                countLowerCase++;
+            }
+            else if(letter.matches("[A-Z]")) {
+                countUpperCase++;
             }
             else {
                 countOther++;
