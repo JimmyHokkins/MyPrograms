@@ -1,3 +1,9 @@
+/*
+Вычислить значение функции:
+F(x) = x * x - 3 * x + 9, если x <= 3;
+F(x) = 1 / (x * x * x + 6), если x > 3
+*/
+
 import java.util.Scanner;
 import static java.lang.Math.*;
 
