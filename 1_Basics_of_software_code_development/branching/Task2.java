@@ -1,3 +1,6 @@
+/*
+Найти max{min(a,b), min(c,d)}.
+*/
 import java.util.Scanner;
 
 public class Task2 {    
