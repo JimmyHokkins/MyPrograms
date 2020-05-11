@@ -1,3 +1,8 @@
+/*
+Вывести на экран соответствия между символами и их численными обозначениями 
+в памяти компьютера
+*/
+
 public class Task6 {    
     public static void main(String[] args) throws java.io.IOException {
         int ch, ch1;         
