@@ -1,3 +1,9 @@
+/*
+Вычислить значение функции на отрезке [a,b] с шагом h:
+y = x, если x > 2
+y = -x, если x <= 2
+*/
+
 import java.util.Scanner;
 
 public class Task2 {    
