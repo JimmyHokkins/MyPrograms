@@ -1,3 +1,7 @@
+/*
+Найти произведение квадратов первых двухсот чисел
+*/
+
 import java.math.BigInteger;
 
 public class Task4 {    
