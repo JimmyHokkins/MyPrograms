@@ -1,3 +1,7 @@
+/*
+В массив A[N] занесены натуральные числа. Найти сумму тех чисел, которые кратны данному К.
+*/
+
 import java.util.Scanner;
 import static java.lang.Math.*;
 
