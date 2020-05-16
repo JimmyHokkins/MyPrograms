@@ -1,3 +1,8 @@
+/*
+Даны целые числа а1, а2, ... , an. Вывести на печать только те числа,
+для которых аi > i.
+*/
+
 public class Task5 {    
     public static void main(String[] args) {
         int array[] = new int[10];
