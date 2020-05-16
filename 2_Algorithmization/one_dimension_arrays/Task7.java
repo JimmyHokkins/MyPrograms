@@ -1,3 +1,8 @@
+/*
+Заданы действительные числа а1, а2, ... , an. Чисел четное количество. 
+Найти max(a1 + an, а2 + аn-1, a3 + an-2, ... ).
+*/
+
 import static java.lang.Math.*;
 
 public class Task7 {    
