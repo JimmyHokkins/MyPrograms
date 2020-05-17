@@ -1,3 +1,7 @@
+/*
+Найти наибольший элемент матрицы и заменить все нечетные элементы на него.
+*/
+
 public class Task15 {    
     public static void main(String[] args) {
         int S1 = 6, S2 = 10;
