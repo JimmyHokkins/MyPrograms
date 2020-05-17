@@ -1,3 +1,7 @@
+/*
+Отсортировать столбцы матрицы по возрастанию и убыванию элементов.
+*/
+
 public class Task13 {    
     public static void main(String[] args) {
         int S1 = 6, S2 = 10;
