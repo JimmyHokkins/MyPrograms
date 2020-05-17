@@ -1,3 +1,7 @@
+/*
+Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+*/
+
 import java.util.Scanner;
 
 public class Task3 {    
