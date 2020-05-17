@@ -1,3 +1,7 @@
+/*
+Найти положительные элементы главной диагонали квадратной матрицы.
+*/
+
 public class Task10 {    
     public static void main(String[] args) {
         int S = 5;
