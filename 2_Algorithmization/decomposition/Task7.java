@@ -1,3 +1,7 @@
+/*
+Написать метод (методы) для вычисления суммы факториалов всех нечетных чисел от 1 до 9.
+*/
+
 import java.util.Scanner;
 import static java.lang.Math.*;
 
