@@ -1,3 +1,8 @@
+/*
+Дан массив действительных чисел. Требуется упорядочить его по возрастанию,
+используя алгоритм сортировки Шелла.
+*/
+
 public class Task6 {    
     public static void main(String[] args) {
         int array[] = new int[30];
