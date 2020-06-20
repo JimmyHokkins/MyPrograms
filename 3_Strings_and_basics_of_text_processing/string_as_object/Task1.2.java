@@ -1,3 +1,8 @@
+/*
+Дан текст (строка). Найдите наибольшее количество подряд идущих
+пробелов в нем.
+*/
+
 public class Task1 {    
     public static void main(String[] args) {
         String sourceString = "ghgh   kjjhg   uuuo     iiuu mjjh";
