@@ -1,7 +1,7 @@
-/*
-  Условие задачи:
-  В строке вставить после каждого символа 'a' символ 'b'
+/*  
+В строке вставить после каждого символа 'a' символ 'b'
 */
+
 public class Task2 {    
     public static void main(String[] args) {       
         StringBuilder str = new StringBuilder("fght_a_vbgkfj_a_rhgy_a_mjf_a");
