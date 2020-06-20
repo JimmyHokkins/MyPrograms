@@ -1,3 +1,7 @@
+/*
+В строке найти количество чисел.
+*/
+
 public class Task4 {    
     public static void main(String[] args) {
         String sourceString = "f2345hgjt67bng-87fjdh32ghjk541re52tryyy8";
