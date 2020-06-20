@@ -1,3 +1,7 @@
+/*
+Замените в строке все вхождения 'word' на 'letter'.
+*/
+
 public class Task2 {    
     public static void main(String[] args) {
         String sourceString = "this[word]themainlegacy[word]wonder[word]space";
