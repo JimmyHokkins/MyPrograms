@@ -1,5 +1,6 @@
 /* 
 Найдите значение функции: z = ((a - 3) * b / 2) + c
+Find the function value: z = ((a - 3) * b / 2) + c
 */
 
 import java.util.Scanner;
